@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinalDraft Counseling | Ivy League Essay Editing</title>
+    <style>
+        /* --- Google Font Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        /* --- CSS Variables (Color Palette) --- */
+        :root {
+            --color-primary: #13685c;
+            --color-primary-light: #55b6a1;
+            --color-background: #fbfbfb;
+            --color-card-background: #ffffff;
+            --color-accent-light-1: #c6e4e1;
+            --color-accent-light-2: #bcd4cc;
+            --color-text-dark: #333333;
+            --color-text-medium: #7c9494;
+            --color-text-light: #7c9c94;
+            --color-border: #dcdcdc;
+
+            /* For mouse gradient effect */
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+        }
+
+        /* --- General & Reset Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-dark);
+            line-height: 1.7;
+
+            background-image: radial-gradient(150px circle at var(--mouse-x) var(--mouse-y),
+                    rgba(188, 212, 204, 0.2),
+                    transparent);
+            transition: background 0.1s ease-out;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-background);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-accent-light-2);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-text-medium);
+        }
+
+        /* --- Reusable Components --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .section-light {
+            background-color: var(--color-card-background);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--color-text-medium);
+            margin-bottom: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Buttons & Interactive Elements --- */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            border: 2px solid var(--color-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(19, 104, 92, 0.2);
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background-color: rgba(251, 251, 251, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-dark);
+            font-weight: 500;
+            padding-bottom: 5px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links .nav-btn {
+            border: 2px solid var(--color-primary);
+            padding: 10px 24px;
+            border-radius: 50px;
+            color: var(--color-primary);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links .nav-btn:hover {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .nav-links .nav-btn::after {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+
+        /* --- Page Content & Animations --- */
+        main {
+            display: none;
+        }
+
+        main.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in.delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .fade-in.delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        /* --- Home Page Specific Styles --- */
+        #home-hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0;
+        }
+
+        #home-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 4rem 0;
+            background: var(--color-primary);
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            color: white;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        #how-it-works .steps-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            gap: 2rem;
+        }
+
+        .step-card {
+            flex: 1;
+        }
+
+        .step-card .icon {
+            font-size: 3rem;
+            color: var(--color-primary-light);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .step-card h3 {
+            color: var(--color-text-dark);
+        }
+
+        /* --- About Page Specific Styles --- */
+        .ao-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 4rem;
+            text-align: left;
+        }
+
+        .ao-card {
+            background-color: var(--color-card-background);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .ao-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .ao-card h3 {
+            color: var(--color-text-dark);
+        }
+
+        .ao-card h4 {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .ao-card p {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: var(--color-text-medium);
+        }
+
+        .ao-card ul {
+            list-style: inside;
+            padding-left: 0.5rem;
+            font-size: 1rem;
+            color: var(--color-text-medium);
+        }
+
+        .ao-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Testimonials Page Specific Styles --- */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background-color: #f7f9f8;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--color-primary-light);
+        }
+
+        .testimonial-card p.quote {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .testimonial-card p.attribution {
+            font-weight: 600;
+            text-align: right;
+            font-size: 1rem;
+        }
+
+        .testimonial-card span {
+            font-weight: 400;
+            color: var(--color-primary);
+        }
+
+        /* --- Get Started Page (Pricing) --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            align-items: stretch;
+        }
+
+        .pricing-tier-card,
+        .standalone-option-card {
+            background: var(--color-card-background);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-tier-card:hover, .standalone-option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pricing-tier-card .tier-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .pricing-tier-card .tier-stats {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-tier-card .tier-desc {
+            color: var(--color-text-medium);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .service-options-list {
+            list-style: none;
+        }
+
+        /* Highlight for individual clickable options */
+        .service-option {
+            padding: 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            background-color: var(--color-card-background); /* Explicitly set default */
+        }
+
+        .service-option:hover {
+            border-color: var(--color-primary-light);
+            background-color: #f7fdfc;
+        }
+
+        .service-option.selected {
+            border-color: var(--color-primary);
+            background-color: var(--color-accent-light-1);
+            color: var(--color-primary);
+            box-shadow: 0 4px 10px rgba(19, 104, 92, 0.1);
+        }
+
+        .service-option-name {
+            font-weight: 600;
+        }
+
+        .service-option-price {
+            float: right;
+            font-weight: 600;
+        }
+
+        /* Highlight for quantity-based options */
+        .multi-add-option {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1rem;
+            background-color: var(--color-card-background); /* Explicitly set default */
+            transition: all 0.2s ease-in-out;
+        }
+
+        .multi-add-option.selected {
+            border-color: var(--color-primary);
+            background-color: var(--color-accent-light-1);
+        }
+
+        .multi-add-option-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .multi-add-controls,
+        .standalone-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+
+        .multi-add-controls label,
+        .standalone-controls label {
+            font-weight: 500;
+            color: var(--color-text-medium);
+        }
+
+        .multi-add-controls input,
+        .standalone-controls input {
+            padding: 8px;
+            width: 60px;
+            border: 1px solid var(--color-border);
+            border-radius: 5px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .multi-add-controls .btn,
+        .standalone-controls .btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        .standalone-option-card {
+            margin-top: 2rem;
+            transition: all 0.2s ease-in-out;
+            background-color: var(--color-card-background);
+        }
+
+        .standalone-option-card.selected {
+             border-color: var(--color-primary);
+             background-color: #f7fdfc;
+        }
+
+        .standalone-option-card .tier-title {
+            color: var(--color-primary);
+        }
+
+        /* -- Shopping Cart Section -- */
+        .cart-summary {
+            margin-top: 4rem;
+            background: var(--color-card-background);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .cart-summary h3 {
+            font-size: 1.8rem;
+            color: var(--color-text-dark);
+            border-bottom: 2px solid var(--color-accent-light-1);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #cart-items {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        #cart-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 1.1rem;
+        }
+
+        #cart-items li:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-name {
+            color: var(--color-text-medium);
+        }
+
+        .cart-item-price {
+            font-weight: 600;
+        }
+
+        .remove-item {
+            cursor: pointer;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-left: 1rem;
+            font-size: 1.2rem;
+        }
+
+        #cart-placeholder {
+            text-align: center;
+            color: var(--color-text-light);
+            padding: 2rem 0;
+        }
+
+        .total-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--color-primary);
+        }
+
+        .total-section span {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        #price-display {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        #checkout-btn {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        #checkout-btn:disabled {
+            background-color: #ccc;
+            border-color: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #checkout-btn:disabled:hover {
+            transform: none;
+        }
+
+        /* --- Footer & Responsive --- */
+        .footer {
+            background-color: var(--color-text-dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: white;
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--color-background);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            #home-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            #how-it-works .steps-container {
+                flex-direction: column;
+            }
+
+            .total-section {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            #checkout-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" data-page="home">FinalDraft Counseling</a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#" class="active" data-page="home">Home</a></li>
+                    <li><a href="#" data-page="about">Our AOs</a></li>
+                    <li><a href="#" data-page="testimonials">Testimonials</a></li>
+                    <li><a href="#" class="nav-btn" data-page="get-started">Get Started</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">☰</div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <main id="home" class="active">
+        <section id="home-hero">
+            <div class="container">
+                <h1 class="fade-in">Dreaming of the Ivy League?</h1>
+                <p class="fade-in delay-1">You've done the hard work. Now, let former Admissions Officers from top
+                    universities help you tell the story that gets you in.</p>
+                <a href="#" id="hero-btn" class="btn btn-primary fade-in delay-2" data-page="get-started">Build Your
+                    Package</a>
+            </div>
+        </section>
+        <section id="home-stats">
+            <div class="stat-item fade-in">
+                <h3>Former AOs</h3>
+                <p>From Harvard, Stanford & more</p>
+            </div>
+            <div class="stat-item fade-in delay-1">
+                <h3>20+ Years</h3>
+                <p>Combined Ivy League Experience</p>
+            </div>
+            <div class="stat-item fade-in delay-2">
+                <h3>Proven Results</h3>
+                <p>Hundreds of top-tier acceptances</p>
+            </div>
+        </section>
+        <section id="why-us" class="section">
+            <div class="container">
+                <h2 class="fade-in">Why Students Struggle</h2>
+                <p class="fade-in">You're an exceptional student, but the application process is a black box. Most
+                    applicants write what they *think* admissions committees want to hear, not what actually captivates
+                    them. This is the #1 reason qualified students are rejected.</p>
+                <h2 class="fade-in" style="margin-top: 4rem;">We Bridge The Gap</h2>
+                <p class="fade-in">Our counselors aren't just great editors; they are former Admissions Officers from
+                    the very schools you're targeting. They have read thousands of essays and know exactly what
+                    separates a 'maybe' from a 'yes'. We give you the insider's edge.</p>
+            </div>
+        </section>
+        <section id="how-it-works" class="section section-light">
+            <div class="container">
+                <h2 class="fade-in">How To Get Started</h2>
+                <div class="steps-container">
+                    <div class="step-card fade-in">
+                        <div class="icon">1.</div>
+                        <h3>Build Your Package</h3>
+                        <p>Select any combination of services on our "Get Started" page. Your cart and total update
+                            instantly.</p>
+                    </div>
+                    <div class="step-card fade-in delay-1">
+                        <div class="icon">2.</div>
+                        <h3>Pay & Submit</h3>
+                        <p>Click "Proceed to Checkout" to open PayPal and reveal our essay submission form, all on the same page.</p>
+                    </div>
+                    <div class="step-card fade-in delay-2">
+                        <div class="icon">3.</div>
+                        <h3>Perfect Your Essays</h3>
+                        <p>We'll confirm receipt and match you with the perfect AO to begin crafting compelling, authentic
+                            essays.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- About Page -->
+    <main id="about">
+        <section class="section">
+            <div class="container">
+                <h2 class="fade-in">Meet Your Mentors</h2>
+                <p class="fade-in">Our team consists of seasoned professionals who have made the final decisions on
+                    thousands of applications at the world's most selective universities.</p>
+                <div class="ao-grid">
+                    <div class="ao-card fade-in">
+                        <h3>Placeholder1</h3>
+                        <h4>Former Senior Admissions Officer, Harvard University</h4>
+                        <p>Placeholder1 brings over a decade of experience from the admissions office of Harvard
+                            University, where she rose to the level of Senior Admissions Officer. During her tenure, she
+                            reviewed thousands of applications from across the globe, gaining an intimate understanding
+                            of what makes a candidate stand out in a pool of exceptional talent. She was a key voice in
+                            committee discussions, advocating for students who demonstrated not only academic excellence
+                            but also intellectual curiosity, leadership, and a commitment to their communities. Her work
+                            involved evaluating applicants for all undergraduate programs, and she has deep expertise in
+                            the nuances of the holistic review process.</p>
+                        <h4>Track Record of Success (6 Years Consulting):</h4>
+                        <ul>
+                            <li><strong>Harvard University:</strong> Over 35 students admitted in the last 6 years.</li>
+                            <li><strong>Yale University:</strong> Approximately 20 students admitted.</li>
+                            <li><strong>Princeton University:</strong> Approximately 18 students admitted.</li>
+                            <li><strong>Other Ivy+ Schools (Stanford, MIT, Columbia):</strong> Over 50 students
+                                admitted.</li>
+                        </ul>
+                    </div>
+                    <div class="ao-card fade-in delay-1">
+                        <h3>Placeholder2</h3>
+                        <h4>Former Assistant Director of Admission, Stanford University</h4>
+                        <p>Placeholder2 is a specialist in STEM and research-focused admissions, having served as an
+                            Assistant Director of Admission at Stanford University for eight years. In this role, he was
+                            responsible for evaluating applicants with a keen eye for identifying future innovators and
+                            researchers. He worked closely with the engineering and natural sciences faculty to select
+                            students who demonstrated exceptional aptitude and a genuine passion for scientific inquiry.
+                            His experience extends to reviewing applications with significant research components,
+                            including publications and high-level science competition awards.</p>
+                        <h4>Track Record of Success (5 Years Consulting):</h4>
+                        <ul>
+                            <li><strong>Stanford University:</strong> Over 30 students admitted, with a high success
+                                rate for those applying to the School of Engineering.</li>
+                            <li><strong>Massachusetts Institute of Technology (MIT):</strong> Approximately 25 students
+                                admitted.</li>
+                            <li><strong>California Institute of Technology (Caltech):</strong> Approximately 15 students
+                                admitted.</li>
+                            <li><strong>Other Top STEM Programs (Carnegie Mellon, UC Berkeley):</strong> Over 40
+                                students admitted.</li>
+                        </ul>
+                    </div>
+                    <div class="ao-card fade-in delay-2">
+                        <h3>Placeholder3</h3>
+                        <h4>Former Admissions Officer, UPenn (Wharton) & Columbia University</h4>
+                        <p>Placeholder3 offers a unique dual perspective from two of the most prestigious business and
+                            finance-oriented Ivy League universities. He served as an admissions officer at the
+                            University of Pennsylvania, with a focus on applicants to the Wharton School, before moving
+                            to the admissions office at Columbia University. This background provides him with a
+                            comprehensive understanding of what top-tier business programs look for in their candidates.
+                            He is adept at helping students articulate their leadership potential, entrepreneurial
+                            spirit, and quantitative strengths.</p>
+                        <h4>Track Record of Success (7 Years Consulting):</h4>
+                        <ul>
+                            <li><strong>University of Pennsylvania (Wharton):</strong> Over 40 students admitted to the
+                                undergraduate business program.</li>
+                            <li><strong>New York University (Stern):</strong> Approximately 35 students admitted.</li>
+                            <li><strong>Columbia University:</strong> Approximately 25 students admitted.</li>
+                            <li><strong>Other Top Business Programs (Cornell, UMich Ross):</strong> Over 60 students
+                                admitted.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Testimonials Page -->
+    <main id="testimonials">
+        <section class="section">
+            <div class="container">
+                <h2 class="fade-in">Success Stories</h2>
+                <p class="fade-in">We're proud of the students we've helped. Their hard work, combined with our
+                    guidance, led to incredible outcomes.</p>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card fade-in">
+                        <p class="quote">"The feedback from my AO was a game-changer. They didn't just correct grammar;
+                            they helped me find my voice. I truly believe it's why I got in."</p>
+                        <p class="attribution">Jennifer S. - <span>Admitted to Harvard</span></p>
+                    </div>
+                    <div class="testimonial-card fade-in delay-1">
+                        <p class="quote">"As a STEM applicant, I struggled to show my personality beyond my research.
+                            FinalDraft helped me weave a narrative that connected my technical skills with my personal
+                            goals."</p>
+                        <p class="attribution">David C. - <span>Admitted to Stanford</span></p>
+                    </div>
+                    <div class="testimonial-card fade-in delay-2">
+                        <p class="quote">"The insight into what Wharton was looking for was invaluable. My AO knew
+                            exactly how to frame my extracurriculars to highlight leadership and impact. 10/10 would
+                            recommend."</p>
+                        <p class="attribution">Michael B. - <span>Admitted to UPenn (Wharton)</span></p>
+                    </div>
+                    <div class="testimonial-card fade-in">
+                        <p class="quote">"Infinite iterations meant I could polish my essays until they were perfect,
+                            without any stress. The process felt collaborative and supportive from start to finish."</p>
+                        <p class="attribution">Emily R. - <span>Admitted to Yale</span></p>
+                    </div>
+                    <div class="testimonial-card fade-in delay-1">
+                        <p class="quote">"Having a REAL former AO was the deciding factor. It's not just advice, it's
+                            advice from the source. Best investment I made in my applications."</p>
+                        <p class="attribution">Alex P. - <span>Admitted to MIT</span></p>
+                    </div>
+                    <div class="testimonial-card fade-in delay-2">
+                        <p class="quote">"The turnaround was fast and the feedback was incredibly detailed. They pushed
+                            me to think deeper and write with more clarity. Can't thank them enough."</p<p
+                                class="attribution">Sarah L. - <span>Admitted to Columbia</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Get Started Page -->
+    <main id="get-started">
+        <section class="section">
+            <div id="pricing-container" class="container">
+                <h2 class="fade-in">Build Your Custom Package</h2>
+                <p class="fade-in">Click any service to add it to your cart. Mix and match from any tier to create the
+                    perfect plan for your needs.</p>
+                <div class="pricing-grid" id="pricing-grid">
+                    <div class="pricing-tier-card fade-in">
+                        <h3 class="tier-title">Tier 1: Premier Ivy+ AO</h3>
+                        <p class="tier-stats">80% IVY+ SUCCESS RATE | UNLIMITED ITERATIONS</p>
+                        <p class="tier-desc">Direct mentorship from a top-tier former Senior AO. The ultimate package
+                            for the most competitive applicants.</p>
+                        <ul class="service-options-list">
+                            <li class="service-option" data-id="t1_pkg" data-price="1000"
+                                data-name="T1 Package (PS + 5 Sup)"><span class="service-option-name">Full
+                                    Package</span><span class="service-option-price">$1000</span></li>
+                            <li class="service-option" data-id="t1_ps" data-price="400"
+                                data-name="T1 Personal Statement"><span class="service-option-name">Personal
+                                    Statement</span><span class="service-option-price">$400</span></li>
+                            <li class="multi-add-option" data-id="t1_supp">
+                                <div class="multi-add-option-header"><span>Individual
+                                        Supplemental</span><span>$200</span></div>
+                                <div class="multi-add-controls"><label for="t1-supp-count">Qty:</label><input
+                                        type="number" id="t1-supp-count" value="1" min="1"><button
+                                        class="btn btn-primary" data-id="t1_supp" data-price="200"
+                                        data-name="T1 Individual Supplemental">Add</button></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pricing-tier-card fade-in delay-1">
+                        <h3 class="tier-title">Tier 2: Elite AO</h3>
+                        <p class="tier-stats">60% IVY+ SUCCESS RATE | 3 ITERATIONS</p>
+                        <p class="tier-desc">Work with an experienced former AO from a Top 10 university. A balanced
+                            approach with outstanding results.</p>
+                        <ul class="service-options-list">
+                            <li class="service-option" data-id="t2_pkg" data-price="500"
+                                data-name="T2 Package (PS + 3 Sup)"><span class="service-option-name">Full
+                                    Package</span><span class="service-option-price">$500</span></li>
+                            <li class="service-option" data-id="t2_ps" data-price="250"
+                                data-name="T2 Personal Statement"><span class="service-option-name">Personal
+                                    Statement</span><span class="service-option-price">$250</span></li>
+                            <li class="multi-add-option" data-id="t2_supp">
+                                <div class="multi-add-option-header"><span>Individual
+                                        Supplemental</span><span>$150</span></div>
+                                <div class="multi-add-controls"><label for="t2-supp-count">Qty:</label><input
+                                        type="number" id="t2-supp-count" value="1" min="1"><button
+                                        class="btn btn-primary" data-id="t2_supp" data-price="150"
+                                        data-name="T2 Individual Supplemental">Add</button></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pricing-tier-card fade-in delay-2">
+                        <h3 class="tier-title">Tier 3: Core AO</h3>
+                        <p class="tier-stats">40% IVY+ SUCCESS RATE | 2 ITERATIONS</p>
+                        <p class="tier-desc">Guidance from a former AO from a Top 25 university. Excellent value for
+                            strengthening your essays.</p>
+                        <ul class="service-options-list">
+                            <li class="service-option" data-id="t3_pkg" data-price="250"
+                                data-name="T3 Package (PS + 2 Sup)"><span class="service-option-name">Full
+                                    Package</span><span class="service-option-price">$250</span></li>
+                            <li class="service-option" data-id="t3_ps" data-price="175"
+                                data-name="T3 Personal Statement"><span class="service-option-name">Personal
+                                    Statement</span><span class="service-option-price">$175</span></li>
+                            <li class="multi-add-option" data-id="t3_supp">
+                                <div class="multi-add-option-header"><span>Individual
+                                        Supplemental</span><span>$100</span></div>
+                                <div class="multi-add-controls"><label for="t3-supp-count">Qty:</label><input
+                                        type="number" id="t3-supp-count" value="1" min="1"><button
+                                        class="btn btn-primary" data-id="t3_supp" data-price="100"
+                                        data-name="T3 Individual Supplemental">Add</button></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="standalone-option-card fade-in" data-id="standalone_supp">
+                    <h3 class="tier-title">Basic Proofread</h3>
+                    <p class="tier-stats">$75 PER ESSAY | NO ITERATIONS</p>
+                    <p class="tier-desc">A quick, professional review for grammar, spelling, and clarity on any
+                        supplemental essay. Ideal for final checks.</p>
+                    <div class="standalone-controls">
+                        <div><label for="standalone-count">Quantity:</label><input type="number" id="standalone-count"
+                                value="1" min="1"></div><button class="btn btn-primary" data-id="standalone_supp"
+                            data-price="75" data-name="Basic Proofread">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="cart-summary fade-in">
+                    <h3>Your Selections</h3>
+                    <ul id="cart-items">
+                        <li id="cart-placeholder">Your cart is empty.</li>
+                    </ul>
+                    <div class="total-section"><span>Total:</span>
+                        <div><span id="price-display">$0</span><button id="checkout-btn" class="btn btn-primary"
+                                disabled>Proceed to Checkout</button></div>
+                    </div>
+                </div>
+            </div>
+            <style>
+  </style>
+            <!-- ========== START: ESSAY SUBMISSION FORM SECTION ========== -->
+            <div id="submission-container" class="container" style="display: none; padding-top: 6rem;">
+                <h2 class="fade-in is-visible">Thank You! One Last Step...</h2>
+                <p class="fade-in is-visible">After completing payment in the new tab, please use the form below to submit your essays and materials. We will confirm receipt and begin the review process shortly.</p>
+                <div class="form-container fade-in is-visible" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <iframe width="640px" height="480px" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__50goa1UNUc3TTA4WVkyN002WERNV1BEOEVJVjhKMy4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+                </div>
+            </div>
+            <!-- ========== END: ESSAY SUBMISSION FORM SECTION ========== -->
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 FinalDraft Counseling. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Setup for All Pages (Mouse, Click, Nav, Scroll Animations) ---
+            const body = document.body;
+            body.addEventListener('mousemove', e => {
+                body.style.setProperty('--mouse-x', e.clientX + 'px');
+                body.style.setProperty('--mouse-y', (e.clientY + window.scrollY) + 'px');
+            });
+            function createRipple(event) {
+                const button = event.currentTarget;
+                const circle = document.createElement("span");
+                const diameter = Math.max(button.clientWidth, button.clientHeight);
+                circle.style.width = circle.style.height = `${diameter}px`;
+                circle.style.left = `${event.clientX - button.offsetLeft - diameter / 2}px`;
+                circle.style.top = `${event.clientY - button.offsetTop - diameter / 2}px`;
+                circle.classList.add("ripple");
+                button.querySelector(".ripple")?.remove();
+                button.appendChild(circle);
+            }
+            document.querySelectorAll(".btn").forEach(button => button.addEventListener("click", createRipple));
+
+            const allPages = document.querySelectorAll('main');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const navLinksContainer = document.getElementById('nav-links');
+            const hamburger = document.getElementById('hamburger');
+
+            const setupScrollAnimations = () => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                    });
+                }, { threshold: 0.1 });
+                document.querySelectorAll('main.active .fade-in').forEach(el => observer.observe(el));
+            };
+
+            const showPage = (pageId) => {
+                allPages.forEach(page => page.classList.remove('active'));
+                document.getElementById(pageId)?.classList.add('active');
+                setupScrollAnimations();
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.page === pageId);
+                });
+                navLinksContainer.classList.remove('active');
+                window.scrollTo(0, 0);
+            };
+
+            document.body.addEventListener('click', (e) => {
+                const link = e.target.closest('a[data-page]');
+                if (link) {
+                    e.preventDefault();
+                    showPage(link.dataset.page);
+                }
+            });
+
+            hamburger.addEventListener('click', () => navLinksContainer.classList.toggle('active'));
+            setupScrollAnimations();
+
+            // --- Pricing "Shopping Cart" Logic ---
+            const getStartedPage = document.getElementById('get-started');
+            const pricingContainer = document.getElementById('pricing-container'); 
+            const submissionContainer = document.getElementById('submission-container');
+            const cartItemsList = document.getElementById('cart-items');
+            const cartPlaceholder = document.getElementById('cart-placeholder');
+            const priceDisplay = document.getElementById('price-display');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            
+            let cart = [];
+
+            const renderCart = () => {
+                cartItemsList.innerHTML = '';
+
+                if (cart.length === 0) {
+                    if (cartPlaceholder) cartItemsList.appendChild(cartPlaceholder);
+                    cartPlaceholder.style.display = 'list-item';
+                } else {
+                    if (cartPlaceholder) cartPlaceholder.style.display = 'none';
+                    cart.forEach(item => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<span class="cart-item-name">${item.name} ${item.quantity > 1 ? `(x${item.quantity})` : ''}</span><div><span class="cart-item-price">$${item.price * item.quantity}</span><span class="remove-item" data-id="${item.id}">×</span></div>`;
+                        cartItemsList.appendChild(li);
+                    });
+                }
+
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                priceDisplay.textContent = `$${total}`;
+                
+                checkoutBtn.disabled = total <= 0;
+                checkoutBtn.textContent = 'Proceed to Checkout';
+
+                // --- NEW: Highlight individual selected items ---
+                // First, clear all existing highlights
+                document.querySelectorAll('.service-option.selected, .multi-add-option.selected, .standalone-option-card.selected').forEach(el => {
+                    el.classList.remove('selected');
+                });
+                
+                // Then, apply highlights to items currently in the cart
+                cart.forEach(item => {
+                    const elementToHighlight = document.querySelector(`[data-id="${item.id}"]`);
+                    if (elementToHighlight) {
+                        elementToHighlight.classList.add('selected');
+                    }
+                });
+            };
+
+            if (getStartedPage) {
+                pricingContainer.addEventListener('click', e => {
+                    const serviceOption = e.target.closest('.service-option');
+                    if (serviceOption) {
+                        const { id, name, price } = serviceOption.dataset;
+                        const existingItemIndex = cart.findIndex(item => item.id === id);
+                        if (existingItemIndex > -1) { cart.splice(existingItemIndex, 1); }
+                        else { cart.push({ id, name, price: parseInt(price), quantity: 1 }); }
+                        renderCart();
+                        return;
+                    }
+
+                    const addButton = e.target.closest('.multi-add-controls .btn, .standalone-controls .btn');
+                    if (addButton) {
+                        const { id, name, price } = addButton.dataset;
+                        const quantityInput = addButton.closest('.multi-add-option, .standalone-option-card').querySelector('input[type="number"]');
+                        const quantity = parseInt(quantityInput.value) || 1;
+                        const existingItemIndex = cart.findIndex(item => item.id === id);
+                        if (existingItemIndex > -1) { cart[existingItemIndex].quantity = quantity; }
+                        else { cart.push({ id, name, price: parseInt(price), quantity }); }
+                        renderCart();
+                        return;
+                    }
+
+                    const removeItemBtn = e.target.closest('.remove-item');
+                    if (removeItemBtn) {
+                        cart = cart.filter(item => item.id !== removeItemBtn.dataset.id);
+                        renderCart();
+                    }
+                });
+
+                checkoutBtn.addEventListener('click', () => {
+                    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    if (total > 0) {
+                        window.open(`https://paypal.me/AnnaDksa/${total}`, '_blank');
+                        submissionContainer.style.display = 'block';
+                        submissionContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        checkoutBtn.disabled = true;
+                        checkoutBtn.textContent = 'PayPal Opened...';
+                    }
+                });
+
+                renderCart();
+            }
+        });
+    </script>
+</body>
+
+</html>
