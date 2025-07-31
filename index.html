@@ -331,57 +331,82 @@
         }
 
         /* --- About Page Specific Styles --- */
-        .ao-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-            margin-top: 4rem;
-            text-align: left;
-        }
+       /* --- About Page Specific Styles --- */
+.ao-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 4rem;
+    text-align: left;
+}
 
-        .ao-card {
-            background-color: var(--color-card-background);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--color-border);
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
+.ao-card {
+    background-color: var(--color-card-background);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative; /* Crucial for positioning the image */
+    overflow: hidden; /* Keeps the image contained */
+}
 
-        .ao-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
+.ao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
 
-        .ao-card h3 {
-            color: var(--color-text-dark);
-        }
+/* NEW: Styles for the hover-to-reveal image */
+.ao-card img {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-accent-light-1);
+    
+    /* Default state: hidden and slightly scaled down */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-        .ao-card h4 {
-            font-size: 1.1rem;
-            color: var(--color-primary);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
+/* Hover state: reveal the image */
+.ao-card:hover img {
+    opacity: 1;
+    transform: scale(1);
+}
 
-        .ao-card p {
-            text-align: left;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            color: var(--color-text-medium);
-        }
+.ao-card h3 {
+    color: var(--color-text-dark);
+}
 
-        .ao-card ul {
-            list-style: inside;
-            padding-left: 0.5rem;
-            font-size: 1rem;
-            color: var(--color-text-medium);
-        }
+.ao-card h4 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
 
-        .ao-card ul li {
-            margin-bottom: 0.5rem;
-        }
+.ao-card p {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: var(--color-text-medium);
+}
 
+.ao-card ul {
+    list-style: inside;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-text-medium);
+}
+
+.ao-card ul li {
+    margin-bottom: 0.5rem;
+}
         /* --- Testimonials Page Specific Styles --- */
         .testimonial-grid {
             display: grid;
@@ -817,72 +842,62 @@
 
     <!-- About Page -->
     <main id="about">
+
         <section class="section">
             <div class="container">
                 <h2 class="fade-in">Meet Your Mentors</h2>
-                <p class="fade-in">Our team consists of seasoned professionals who have made the final decisions on
+                <p class="fade-in">Three experienced consultants join forces!</p>
+                    <p class="fade-in"></p>Our team consists of Ivy+ seasoned professionals who have made the final decisions on
                     thousands of applications at the world's most selective universities.</p>
                 <div class="ao-grid">
                     <div class="ao-card fade-in">
-                        <h3>Placeholder1</h3>
+                        <img src="./stacy-chen.jpg" alt="Profile picture of Stacy Chen">
+                        <h3>Stacy Chen</h3>
                         <h4>Former Senior Admissions Officer, Harvard University</h4>
-                        <p>Placeholder1 brings over a decade of experience from the admissions office of Harvard
-                            University, where she rose to the level of Senior Admissions Officer. During her tenure, she
-                            reviewed thousands of applications from across the globe, gaining an intimate understanding
-                            of what makes a candidate stand out in a pool of exceptional talent. She was a key voice in
-                            committee discussions, advocating for students who demonstrated not only academic excellence
-                            but also intellectual curiosity, leadership, and a commitment to their communities. Her work
-                            involved evaluating applicants for all undergraduate programs, and she has deep expertise in
-                            the nuances of the holistic review process.</p>
+                        <p>Stacy Chen views the college application as a complete narrative. This perspective has been due to her unique background in creative writing, visul design, and over a decade in top-tier admissions. She understands that a successful application is a blend of storytelling, positioning, and impeccable presentation.</p>
+
+<p>With a degree in English (Creative Writing) and a minor in 2D Design, Stacy's career begn in freelnce graphic design, where she mastered her skills of communicating ideas effectively. She desired to work more deeply with student narratives and started as an admissions officer at Wesleyan University, a top liberal arts college. Her success there led to her recruitment by Harvard University, where she ultimately rose to the level of Senior Admissions Officer.</p>
+
+<p>During her time at Harvard, Stacy reviewed thousands of applications from around the world and became a key voice in committee discussions. She has seen students who demonstrated academic excellence and intellectual curiosity, leadership, and a compelling personal story. Her multidisciplinary expertise gives her an unparalleled understanding of the holistic review process. She guides her students in creating applications that are intellectually rigorous and authentically captivating.
+</p>
                         <h4>Track Record of Success (6 Years Consulting):</h4>
                         <ul>
-                            <li><strong>Harvard University:</strong> Over 35 students admitted in the last 6 years.</li>
-                            <li><strong>Yale University:</strong> Approximately 20 students admitted.</li>
-                            <li><strong>Princeton University:</strong> Approximately 18 students admitted.</li>
+                            <li><strong>Harvard University:</strong> 20% Success Rate (6X Acceptance Chances)</li>
+                            <li><strong>Yale University:</strong> 60% Success Rate (9X Acceptance Chances)</li>
+                            <li><strong>Princeton University:</strong> 50% Success Rate (11X Acceptance Chances)</li>
                             <li><strong>Other Ivy+ Schools (Stanford, MIT, Columbia):</strong> Over 50 students
                                 admitted.</li>
                         </ul>
                     </div>
                     <div class="ao-card fade-in delay-1">
-                        <h3>Placeholder2</h3>
-                        <h4>Former Assistant Director of Admission, Stanford University</h4>
-                        <p>Placeholder2 is a specialist in STEM and research-focused admissions, having served as an
-                            Assistant Director of Admission at Stanford University for eight years. In this role, he was
-                            responsible for evaluating applicants with a keen eye for identifying future innovators and
-                            researchers. He worked closely with the engineering and natural sciences faculty to select
-                            students who demonstrated exceptional aptitude and a genuine passion for scientific inquiry.
-                            His experience extends to reviewing applications with significant research components,
-                            including publications and high-level science competition awards.</p>
+                        <img src="./priya-naidoo.jpg" alt="Profile picture of Priya Naidoo">
+                        <h3>Priya Naidoo</h3>
+                        <h4>Former Admissions Officer, Stanford University</h4>
+                        <p>Priya offers a rare expertise for STEM applicants: her insight as a former top-tier admissions officer is combined with her practical experience of a Princeton graduate engineer. Her unique background allows her to evaluate an applicantion's technical merits but also to helpstudents frame their essays on research and passion in a way that resonates with admissions committees.</p>
+
+<p>Priya's journey began at Princeton University, where she earned both her Bachelor's and Master's degrees in Electrical Engineering. Afterward, she spent nearly a decade overseas as a lead engineer on international projects (in Shanghai, Maldives, and Tokyo), and gained firsthand experience in the technology industry. This perspective led to her passion for identifying and assisting the next generation of innovators, leading her to transition into high education. She began her admissions career at UC Berkeley before being recruited to Stanford University as an admissions officer specialized in evaluating the most competitive STEM profiles. In her role t Stanford, Priya was responsible for evaluating thousands of applicants for identifying the future innovators. She worked closely with the engineering and natural sciences faculty to select students who demonstrated exceptional aptitude and a genuine passion for scientific inquiry. Her experience extends to reviewing applications with significant research components, including publications and high-level science competition awards.
+</p>
                         <h4>Track Record of Success (5 Years Consulting):</h4>
                         <ul>
-                            <li><strong>Stanford University:</strong> Over 30 students admitted, with a high success
-                                rate for those applying to the School of Engineering.</li>
-                            <li><strong>Massachusetts Institute of Technology (MIT):</strong> Approximately 25 students
-                                admitted.</li>
-                            <li><strong>California Institute of Technology (Caltech):</strong> Approximately 15 students
-                                admitted.</li>
+                            <li><strong>Stanford University:</strong> 33% Success Rate (8X Acceptance Chances)</li>
+                            <li><strong>Massachusetts Institute of Technology (MIT):</strong> 40% Success Rate (10X Acceptance Chances)</li>
+                            <li><strong>California Institute of Technology (Caltech):</strong> 35% Success Rate (9X Acceptance Chances)</li>
                             <li><strong>Other Top STEM Programs (Carnegie Mellon, UC Berkeley):</strong> Over 40
                                 students admitted.</li>
                         </ul>
                     </div>
                     <div class="ao-card fade-in delay-2">
-                        <h3>Placeholder3</h3>
-                        <h4>Former Admissions Officer, UPenn (Wharton) & Columbia University</h4>
-                        <p>Placeholder3 offers a unique dual perspective from two of the most prestigious business and
-                            finance-oriented Ivy League universities. He served as an admissions officer at the
-                            University of Pennsylvania, with a focus on applicants to the Wharton School, before moving
-                            to the admissions office at Columbia University. This background provides him with a
-                            comprehensive understanding of what top-tier business programs look for in their candidates.
-                            He is adept at helping students articulate their leadership potential, entrepreneurial
-                            spirit, and quantitative strengths.</p>
+                        <img src="./richard-nia.jpg" alt="Profile picture of Richard Nia">
+                        <h3>Richard Nia</h3>
+                        <h4>Former Admissions Officer, UPenn (Wharton)</h4>
+                        <p>Richard Nia offers a unique and powerful perspective. He uses his deep experience inside an Ivy League admissions office for his successful entrepreneurial career. As a former Admissions  Officer at the University of Pennsylvania, he specialized in evaluating applicants for the highly competitive Wharton School. This background provides him with an insider's understanding of what exactly top-tier business programs demand. He is adept at helping students build their application with leadership potential, entrepreneurial spirit, and quantitative strengths.</p>
+                        <p>Richard's journey began with a Bachelor's degree in Economics from the University of Michigan, followed by a decade as a freelance marketer where he perfected his talent to craft compelling personal narratives. He then transitioned to serving as an Admissions Consultant at the University of Massachusetts Amherst for 8 years before getting recruited to the University of Pennsylvania. After his time at UPenn, he  has founded his own successful technology consulting firm, demonstrating the same entrepreneurial drive he now seeks to highlight in his students.</p>
                         <h4>Track Record of Success (7 Years Consulting):</h4>
                         <ul>
-                            <li><strong>University of Pennsylvania (Wharton):</strong> Over 40 students admitted to the
-                                undergraduate business program.</li>
-                            <li><strong>New York University (Stern):</strong> Approximately 35 students admitted.</li>
-                            <li><strong>Columbia University:</strong> Approximately 25 students admitted.</li>
-                            <li><strong>Other Top Business Programs (Cornell, UMich Ross):</strong> Over 60 students
-                                admitted.</li>
+                            <li><strong>University of Pennsylvania (Wharton):</strong> 60% Success Rate (10X Acceptance Chances)</li>
+                            <li><strong>New York University (Stern):</strong> 80% Success Rate (9X Acceptance Chances)</li>
+                            <li><strong>Columbia University:</strong> 70% Success Rate (16X Acceptance Chances).</li>
+                            <li><strong>Other Top Business Programs (Cornell, UMich Ross):</strong> Over 30 students admitted.</li>
                         </ul>
                     </div>
                 </div>
