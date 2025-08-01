@@ -525,6 +525,27 @@
             float: right;
             font-weight: 600;
         }
+        /* --- NEW: Styles for package details list --- */
+.package-details {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0.2rem;
+    font-size: 0.9rem;
+    color: var(--color-text-medium);
+    text-align: left;
+}
+.package-details li {
+    position: relative;
+    padding-left: 1.2rem; /* Space for the checkmark */
+    margin-bottom: 0.1rem;
+}
+.package-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
 
         /* Highlight for quantity-based options */
         .multi-add-option {
@@ -770,7 +791,7 @@
             <nav>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#" class="active" data-page="home">Home</a></li>
-                    <li><a href="#" data-page="about">Our AOs</a></li>
+                    <li><a href="#" data-page="about">About Us</a></li>
                     <li><a href="#" data-page="testimonials">Testimonials</a></li>
                     <li><a href="#" class="nav-btn" data-page="get-started">Get Started</a></li>
                 </ul>
@@ -855,10 +876,10 @@
                     <div class="ao-card fade-in">
                         <img src="./stacy-chen.jpg" alt="Profile picture of Stacy Chen">
                         <h3>Stacy Chen</h3>
-                        <h4>Former Senior Admissions Officer, Harvard University</h4>
+                        <h4>Former Admissions Officer, Harvard University</h4>
                         <p>Stacy Chen views the college application as a complete narrative. This perspective has been due to her unique background in creative writing, visul design, and over a decade in top-tier admissions. She understands that a successful application is a blend of storytelling, positioning, and impeccable presentation.</p>
 
-<p>With a degree in English (Creative Writing) and a minor in 2D Design, Stacy's career begn in freelnce graphic design, where she mastered her skills of communicating ideas effectively. She desired to work more deeply with student narratives and started as an admissions officer at Wesleyan University, a top liberal arts college. Her success there led to her recruitment by Harvard University, where she ultimately rose to the level of Senior Admissions Officer.</p>
+<p>With a degree in English (Creative Writing) and a minor in 2D Design, Stacy's career begn in freelnce graphic design, where she mastered her skills of communicating ideas effectively. She desired to work more deeply with student narratives and started as an admissions officer at Wesleyan University, a top liberal arts college. Her success there led to her recruitment by Harvard University, where she ultimately rose to the level of Admissions Officer.</p>
 
 <p>During her time at Harvard, Stacy reviewed thousands of applications from around the world and became a key voice in committee discussions. She has seen students who demonstrated academic excellence and intellectual curiosity, leadership, and a compelling personal story. Her multidisciplinary expertise gives her an unparalleled understanding of the holistic review process. She guides her students in creating applications that are intellectually rigorous and authentically captivating.
 </p>
@@ -916,36 +937,36 @@
                     guidance, led to incredible outcomes.</p>
                 <div class="testimonial-grid">
                     <div class="testimonial-card fade-in">
-                        <p class="quote">"The feedback from my AO was a game-changer. They didn't just correct grammar;
-                            they helped me find my voice. I truly believe it's why I got in."</p>
+                        <p class="quote">"The feedback from my consultant was a game-changer. He didn't just correct grammar;
+                            he helped me find my voice. I truly believe it's why I got in."</p>
                         <p class="attribution">Jennifer S. - <span>Admitted to Harvard</span></p>
                     </div>
                     <div class="testimonial-card fade-in delay-1">
                         <p class="quote">"As a STEM applicant, I struggled to show my personality beyond my research.
-                            FinalDraft helped me weave a narrative that connected my technical skills with my personal
+                            FinalDraft helped me create a narrative that connected my technical skills with my personal
                             goals."</p>
                         <p class="attribution">David C. - <span>Admitted to Stanford</span></p>
                     </div>
                     <div class="testimonial-card fade-in delay-2">
-                        <p class="quote">"The insight into what Wharton was looking for was invaluable. My AO knew
+                        <p class="quote">"The insight into what Wharton was looking for was invaluable. My consultant knew
                             exactly how to frame my extracurriculars to highlight leadership and impact. 10/10 would
                             recommend."</p>
-                        <p class="attribution">Michael B. - <span>Admitted to UPenn (Wharton)</span></p>
+                        <p class="attribution">Xiang P. - <span>Admitted to UPenn (Wharton)</span></p>
                     </div>
                     <div class="testimonial-card fade-in">
                         <p class="quote">"Infinite iterations meant I could polish my essays until they were perfect,
                             without any stress. The process felt collaborative and supportive from start to finish."</p>
-                        <p class="attribution">Emily R. - <span>Admitted to Yale</span></p>
+                        <p class="attribution">Saketh R. - <span>Admitted to Yale</span></p>
                     </div>
                     <div class="testimonial-card fade-in delay-1">
                         <p class="quote">"Having a REAL former AO was the deciding factor. It's not just advice, it's
                             advice from the source. Best investment I made in my applications."</p>
-                        <p class="attribution">Alex P. - <span>Admitted to MIT</span></p>
+                        <p class="attribution">William X. - <span>Admitted to MIT</span></p>
                     </div>
                     <div class="testimonial-card fade-in delay-2">
                         <p class="quote">"The turnaround was fast and the feedback was incredibly detailed. They pushed
-                            me to think deeper and write with more clarity. Can't thank them enough."</p<p
-                                class="attribution">Sarah L. - <span>Admitted to Columbia</span></p>
+                            me to think deeper and write with more clarity. Can't thank them enough."</p>
+                                <p class="attribution">Arnav S. - <span>Admitted to Columbia</span></p>
                     </div>
                 </div>
             </div>
@@ -960,73 +981,97 @@
                 <p class="fade-in">Click any service to add it to your cart. Mix and match from any tier to create the
                     perfect plan for your needs.</p>
                 <div class="pricing-grid" id="pricing-grid">
-                    <div class="pricing-tier-card fade-in">
-                        <h3 class="tier-title">Tier 1: Premier Ivy+ AO</h3>
-                        <p class="tier-stats">80% IVY+ SUCCESS RATE | UNLIMITED ITERATIONS</p>
-                        <p class="tier-desc">Direct mentorship from a top-tier former Senior AO. The ultimate package
-                            for the most competitive applicants.</p>
-                        <ul class="service-options-list">
-                            <li class="service-option" data-id="t1_pkg" data-price="1000"
-                                data-name="T1 Package (PS + 5 Sup)"><span class="service-option-name">Full
-                                    Package</span><span class="service-option-price">$1000</span></li>
-                            <li class="service-option" data-id="t1_ps" data-price="400"
-                                data-name="T1 Personal Statement"><span class="service-option-name">Personal
-                                    Statement</span><span class="service-option-price">$400</span></li>
-                            <li class="multi-add-option" data-id="t1_supp">
-                                <div class="multi-add-option-header"><span>Individual
-                                        Supplemental</span><span>$200</span></div>
-                                <div class="multi-add-controls"><label for="t1-supp-count">Qty:</label><input
-                                        type="number" id="t1-supp-count" value="1" min="1"><button
-                                        class="btn btn-primary" data-id="t1_supp" data-price="200"
-                                        data-name="T1 Individual Supplemental">Add</button></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pricing-tier-card fade-in delay-1">
-                        <h3 class="tier-title">Tier 2: Elite AO</h3>
-                        <p class="tier-stats">60% IVY+ SUCCESS RATE | 3 ITERATIONS</p>
-                        <p class="tier-desc">Work with an experienced former AO from a Top 10 university. A balanced
-                            approach with outstanding results.</p>
-                        <ul class="service-options-list">
-                            <li class="service-option" data-id="t2_pkg" data-price="500"
-                                data-name="T2 Package (PS + 3 Sup)"><span class="service-option-name">Full
-                                    Package</span><span class="service-option-price">$500</span></li>
-                            <li class="service-option" data-id="t2_ps" data-price="250"
-                                data-name="T2 Personal Statement"><span class="service-option-name">Personal
-                                    Statement</span><span class="service-option-price">$250</span></li>
-                            <li class="multi-add-option" data-id="t2_supp">
-                                <div class="multi-add-option-header"><span>Individual
-                                        Supplemental</span><span>$150</span></div>
-                                <div class="multi-add-controls"><label for="t2-supp-count">Qty:</label><input
-                                        type="number" id="t2-supp-count" value="1" min="1"><button
-                                        class="btn btn-primary" data-id="t2_supp" data-price="150"
-                                        data-name="T2 Individual Supplemental">Add</button></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pricing-tier-card fade-in delay-2">
-                        <h3 class="tier-title">Tier 3: Core AO</h3>
-                        <p class="tier-stats">40% IVY+ SUCCESS RATE | 2 ITERATIONS</p>
-                        <p class="tier-desc">Guidance from a former AO from a Top 25 university. Excellent value for
-                            strengthening your essays.</p>
-                        <ul class="service-options-list">
-                            <li class="service-option" data-id="t3_pkg" data-price="250"
-                                data-name="T3 Package (PS + 2 Sup)"><span class="service-option-name">Full
-                                    Package</span><span class="service-option-price">$250</span></li>
-                            <li class="service-option" data-id="t3_ps" data-price="175"
-                                data-name="T3 Personal Statement"><span class="service-option-name">Personal
-                                    Statement</span><span class="service-option-price">$175</span></li>
-                            <li class="multi-add-option" data-id="t3_supp">
-                                <div class="multi-add-option-header"><span>Individual
-                                        Supplemental</span><span>$100</span></div>
-                                <div class="multi-add-controls"><label for="t3-supp-count">Qty:</label><input
-                                        type="number" id="t3-supp-count" value="1" min="1"><button
-                                        class="btn btn-primary" data-id="t3_supp" data-price="100"
-                                        data-name="T3 Individual Supplemental">Add</button></div>
-                            </li>
-                        </ul>
-                    </div>
+    <div class="pricing-tier-card fade-in">
+        <h3 class="tier-title">Tier 1: Premier Ivy+</h3>
+        <p class="tier-stats">80% IVY+ SUCCESS RATE | UNLIMITED ITERATIONS</p>
+        <p class="tier-desc">Direct mentorship and review from all 3 top-tier former AOs for Ivy+ application essays. The ultimate package
+            for the most competitive applicants.</p>
+        <ul class="service-options-list">
+            <li class="service-option" data-id="t1_pkg" data-price="1000"
+                data-name="T1 Package (PS + 5 Sup)">
+                <div>
+                    <span class="service-option-name">Full Package</span>
+                    <span class="service-option-price">$1000</span>
                 </div>
+                <ul class="package-details">
+                    <li>Personal Statement</li>
+                    <li>5 Supplementals</li>
+                </ul>
+            </li>
+            <li class="service-option" data-id="t1_ps" data-price="400"
+                data-name="T1 Personal Statement"><span class="service-option-name">Personal
+                    Statement</span><span class="service-option-price">$400</span></li>
+            <li class="multi-add-option" data-id="t1_supp">
+                <div class="multi-add-option-header"><span>Individual
+                        Supplemental</span><span>$200</span></div>
+                <div class="multi-add-controls"><label for="t1-supp-count">Qty:</label><input
+                        type="number" id="t1-supp-count" value="1" min="1"><button
+                        class="btn btn-primary" data-id="t1_supp" data-price="200"
+                        data-name="T1 Individual Supplemental">Add</button></div>
+            </li>
+        </ul>
+    </div>
+    <div class="pricing-tier-card fade-in delay-1">
+        <h3 class="tier-title">Tier 2: Elite</h3>
+        <p class="tier-stats">60% IVY+ SUCCESS RATE | 3 ITERATIONS</p>
+        <p class="tier-desc">Work with 2 experienced former AOs. Intended for Top 10 university essays. A balanced
+            approach with outstanding results.</p>
+        <ul class="service-options-list">
+            <li class="service-option" data-id="t2_pkg" data-price="500"
+                data-name="T2 Package (PS + 3 Sup)">
+                <div>
+                    <span class="service-option-name">Full Package</span>
+                    <span class="service-option-price">$500</span>
+                </div>
+                 <ul class="package-details">
+                    <li>Personal Statement</li>
+                    <li>3 Supplementals</li>
+                </ul>
+            </li>
+            <li class="service-option" data-id="t2_ps" data-price="250"
+                data-name="T2 Personal Statement"><span class="service-option-name">Personal
+                    Statement</span><span class="service-option-price">$250</span></li>
+            <li class="multi-add-option" data-id="t2_supp">
+                <div class="multi-add-option-header"><span>Individual
+                        Supplemental</span><span>$150</span></div>
+                <div class="multi-add-controls"><label for="t2-supp-count">Qty:</label><input
+                        type="number" id="t2-supp-count" value="1" min="1"><button
+                        class="btn btn-primary" data-id="t2_supp" data-price="150"
+                        data-name="T2 Individual Supplemental">Add</button></div>
+            </li>
+        </ul>
+    </div>
+    <div class="pricing-tier-card fade-in delay-2">
+        <h3 class="tier-title">Tier 3: Core</h3>
+        <p class="tier-stats">40% IVY+ SUCCESS RATE | 2 ITERATIONS</p>
+        <p class="tier-desc">Guidance from a former AO geared towards a Top 25 university. Excellent value for
+            strengthening your essays.</p>
+        <ul class="service-options-list">
+            <li class="service-option" data-id="t3_pkg" data-price="250"
+                data-name="T3 Package (PS + 2 Sup)">
+                <div>
+                    <span class="service-option-name">Full Package</span>
+                    <span class="service-option-price">$250</span>
+                </div>
+                 <ul class="package-details">
+                    <li>Personal Statement</li>
+                    <li>2 Supplementals</li>
+                </ul>
+            </li>
+            <li class="service-option" data-id="t3_ps" data-price="175"
+                data-name="T3 Personal Statement"><span class="service-option-name">Personal
+                    Statement</span><span class="service-option-price">$175</span></li>
+            <li class="multi-add-option" data-id="t3_supp">
+                <div class="multi-add-option-header"><span>Individual
+                        Supplemental</span><span>$100</span></div>
+                <div class="multi-add-controls"><label for="t3-supp-count">Qty:</label><input
+                        type="number" id="t3-supp-count" value="1" min="1"><button
+                        class="btn btn-primary" data-id="t3_supp" data-price="100"
+                        data-name="T3 Individual Supplemental">Add</button></div>
+            </li>
+        </ul>
+    </div>
+</div>
                 <div class="standalone-option-card fade-in" data-id="standalone_supp">
                     <h3 class="tier-title">Basic Proofread</h3>
                     <p class="tier-stats">$75 PER ESSAY | NO ITERATIONS</p>
@@ -1044,7 +1089,7 @@
                         <li id="cart-placeholder">Your cart is empty.</li>
                     </ul>
                     <div class="total-section"><span>Total:</span>
-                        <div><span id="price-display">$0</span><button id="checkout-btn" class="btn btn-primary"
+                        <div><span id="price-display">$0</span></div><div><button id="checkout-btn" class="btn btn-primary"
                                 disabled>Proceed to Checkout</button></div>
                     </div>
                 </div>
